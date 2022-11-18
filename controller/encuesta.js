@@ -30,8 +30,8 @@ const postEncuesta = async (req, res) => {
 const putEncuesta = async( req, res )=> {
     // Destructuración 
 
-    const { Nombreencuestaanterior, Nombreencuestanuevo,FechaAnterior,Fechanueva,Documentoencuenstaanterior,Documentoencuenstanuevo,Nombreencuestadoanterior,Nombreencuestadonuevo,edadanterior,edadnuevo,generoanterior,generonuevo,empleadoanterior,empleadonuevo} = req.body
-const encuesta = await Encuesta.findOneAndUpdate({Nombreencuesta: Nombreencuestaanterior,Fecha:FechaAnterior,Documentoencuensta:Documentoencuenstaanterior,Nombreencuestado:Nombreencuestadoanterior,edad:edadanterior,genero:generoanterior,empleado:empleadoanterior}, {Nombreencuesta:Nombreencuestanuevo,Fecha:Fechanueva,Documentoencuensta:Documentoencuenstanuevo,Nombreencuestado:Nombreencuestadonuevo,edad:edadnuevo,genero:generonuevo,empleado:empleadonuevo})
+    const { Nombreencuestaanterior, Nombreencuestanuevo,Fechaantarior,Documentoencuenstaantarior,Nombreencuestadoantarior,edadantarior,generoantarior,empleadoantarior,Fechanuevo,Documentoencuenstanuevo,Nombreencuestadonuevo,edadnuevo,generonuevo,empleadonuevo} = req.body
+const encuesta = await Encuesta.findOneAndUpdate({Nombreencuesta: Nombreencuestaanterior,Fecha:Fechaantarior,Documentoencuensta:Documentoencuenstaantarior,Nombreencuestado:Nombreencuestadoantarior,edad:edadantarior,genero:generoantarior,empleado:empleadoantarior}, {Nombreencuesta:Nombreencuestanuevo,Fecha:Fechanuevo,Documentoencuensta:Documentoencuenstanuevo,Nombreencuestado:Nombreencuestadonuevo,edad:edadnuevo,genero:generonuevo,empleado:empleadonuevo})
     res.json({
     msg: 'PUT API Encuesta',
     encuesta})
