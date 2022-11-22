@@ -30,8 +30,8 @@ const postEncuesta = async (req, res) => {
 const putEncuesta = async( req, res )=> {
     // Destructuración 
 
-    const { Nombreencuestaanterior, Nombreencuestanuevo,Fechaantarior,Documentoencuenstaantarior,Nombreencuestadoantarior,edadantarior,generoantarior,empleadoantarior,Fechanuevo,Documentoencuenstanuevo,Nombreencuestadonuevo,edadnuevo,generonuevo,empleadonuevo} = req.body
-const encuesta = await Encuesta.findOneAndUpdate({Nombreencuesta: Nombreencuestaanterior,Fecha:Fechaantarior,Documentoencuensta:Documentoencuenstaantarior,Nombreencuestado:Nombreencuestadoantarior,edad:edadantarior,genero:generoantarior,empleado:empleadoantarior}, {Nombreencuesta:Nombreencuestanuevo,Fecha:Fechanuevo,Documentoencuensta:Documentoencuenstanuevo,Nombreencuestado:Nombreencuestadonuevo,edad:edadnuevo,genero:generonuevo,empleado:empleadonuevo})
+    const { Nombreencuestaanterior, Nombreencuestanuevo,Fecha,Documentoencuensta,Nombreencuestado,edad,genero,empleado} = req.body
+const encuesta = await Encuesta.findOneAndUpdate({Nombreencuesta: Nombreencuestaanterior}, {Nombreencuesta:Nombreencuestanuevo,Fecha:Fecha,Documentoencuensta:Documentoencuensta,Nombreencuestado:Nombreencuestado,edad:edad,genero:genero,empleado:empleado})
     res.json({
     msg: 'PUT API Encuesta',
     encuesta})
